@@ -1,0 +1,67 @@
+{% load staticfiles %}
+<div class="container">
+    <div class="bpu afn afd">
+        <h2 class="bpv bpw" id="education"><span class="fas fa-graduation-cap mr-2"></span>Education</h2>
+    </div>
+    <div class="container">
+
+        {% if all_educations %}
+        {% for education in all_educations %}
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>
+                        {{ education.school }}
+                    </h3>
+                    <h6>
+                        {{ education.degree }}
+                    </h6>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="text-sm-left text-md-right text-muted">
+                        {{ education.location }}
+                    </h6>
+                    <h6 class="text-sm-left text-md-right text-muted">
+                        {{ education.start_date|date:'M Y'}} -
+                        {% if education.end_date is null %}
+                        Present
+                        {% else %}
+                        {{ education.end_date|date:'M Y'}}
+                        {% endif %}
+                    </h6>
+                </div>
+            </div>
+            <a href="#multi_collapse_education_5" data-toggle="collapse">
+                <i class="far fa-caret-square-down"></i>
+                Details
+            </a>
+            <div class="container collapse multi-collapse" id="multi_collapse_education_5">
+                <div class="ember-view pv-entity__extra-details" id="ember1167">
+                    <div class="ember-view pv-entity__extra-details" id="ember1167">
+                        <p>&nbsp;</p>
+                    </div>
+
+                    <ul>
+
+                        <li>
+                            <p>
+                                {{ education.details | safe }}
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <p>&nbsp;</p>
+            </div>
+        </div>
+
+        <br>
+
+    </div>
+</div>
+{% endfor %}
+{% else %}
+<h2>You don't have any education, so please go back to school!</h2>
+{% endif %}
