@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
-{% block content %}
+{% block main %}
 <div style="margin-top:10px" class="card">
     <div class="card-body">
-        <h4 class="card-title">Log in to your account</h4>
+        <h4 class="card-title">Create an account</h4>
     
         <form method="post">
             {% csrf_token %}
@@ -12,15 +12,15 @@
                 {{ form|crispy }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                <button class="btn btn-outline-info" type="submit" >Sign Up</button>
             </div>
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Already Have An Account? <a class="ml-2" href="#">Sign In</a>
+                Already Have An Account? <a class="ml-2" href="{% url 'login'%}">Sign In</a>
             </small>
         </div>
     </div>
 
 </div>
-{% endblock content %}
+{% endblock %}
