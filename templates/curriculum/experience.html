@@ -6,37 +6,37 @@
     <div class="container">
 
         {% if all_experiences %}
-        {% for Experience in all_experiences %}
+        {% for experience in all_experiences %}
 
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
                     <h3>
-                        {{ Experience.company }}
+                        {{ experience.company }}
                     </h3>
                     <h6>
-                        {{ Experience.position }}
+                        {{ experience.position }}
                     </h6>
                 </div>
                 <div class="col-md-4">
                     <h6 class="text-sm-left text-md-right text-muted">
-                        {{ Experience.location }}
+                        {{ experience.location }}
                     </h6>
                     <h6 class="text-sm-left text-md-right text-muted">
-                        {{ Experience.start_date|date:'M Y'}} -
-                        {% if Experience.end_date is null %}
+                        {{ experience.start_date|date:'M Y'}} -
+                        {% if experience.end_date is null %}
                         Present
                         {% else %}
-                        {{ Experience.end_date|date:'M Y'}}
+                        {{ experience.end_date|date:'M Y'}}
                         {% endif %}
                     </h6>
                 </div>
             </div>
-            <a href="#multi_collapse_education_5" data-toggle="collapse">
+            <a href="#experience_{{ experience.id }}" data-toggle="collapse">
                 <i class="far fa-caret-square-down"></i>
                 Details
             </a>
-            <div class="container collapse multi-collapse" id="multi_collapse_education_5">
+            <div class="container collapse multi-collapse" id="experience_{{ experience.id }}">
                 <div class="ember-view pv-entity__extra-details" id="ember1167">
                     <div class="ember-view pv-entity__extra-details" id="ember1167">
                         <p>&nbsp;</p>
@@ -46,7 +46,7 @@
 
                         <li>
                             <p>
-                                {{ Experience.details | safe }}
+                                {{ experience.details | safe }}
                             </p>
                         </li>
 
