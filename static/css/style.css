@@ -7,6 +7,10 @@ body {
     padding-top: 80px;
 }
 
+h4, label, legend{
+    color:#292b2c;
+}
+
 nav {
     background-color: #292b2c !important;
     font-variant: small-caps !important;
