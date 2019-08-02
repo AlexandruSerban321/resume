@@ -1,0 +1,33 @@
+{% extends  'base.html' %}
+{% load crispy_forms_tags %}
+{% load staticfiles %}
+{% block content %}
+<div class="container" id="brand">
+    <div class="jumbotron text-center pt-3">
+        <div class="row">
+            <div class="col-lg-4 mb-3 align-self-center">
+                <img class="img-thumbnail" alt="profile picture" src="{{ user.profile.image.url }}" width="50%"
+                    height="50%">
+            </div>
+            <div class="col-lg-8 text-center">
+                <h1>{{user.username}}</h1>
+                <blockquote>
+
+                    <h5>Unemployed</h5>
+
+                </blockquote>
+
+                <h4 class="text-justify">
+                    <bold style="color: #FFF">My Objective:</bold>
+                </h4>
+
+                <p class='text-justify'>No Biography</p>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+{% endblock %}
