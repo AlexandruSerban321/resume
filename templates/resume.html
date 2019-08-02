@@ -8,7 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <title>Alexandru Serban's resume</title>
 </head>
@@ -16,84 +17,7 @@
 <body>
     <div class="container">
 
-        <div class="container">
-            <nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
-                <div class="container">
-                    <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarCollapse"
-                        aria-label="Toggle navigation" type="button" data-target="#navbarCollapse"
-                        data-toggle="collapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="nav navbar-nav pull-sm-left">
-                            <li class="nav-item">
-                                <a class="navbar-brand" href="#brand">
-                                    Alexandru Serban
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#experience">
-                                    <span class="fas fa-briefcase mr-2" aria-hidden="true"></span>Experience
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#education">
-                                    <span class="fas fa-graduation-cap mr-2" aria-hidden="true"></span>Education
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#skills">
-                                    <span class="fas fa-wrench mr-2" aria-hidden="true"></span>Skills
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#contact">
-                                    <span class="fas fa-paper-plane mr-2" aria-hidden="true"></span>Contact
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <ul class="nav pull-sm-right">
-                            <li class="nav-item">
-                                <a class="nav-link" href="mailto:serban200208@gmail.com">
-                                    <span class="fas fa-envelope" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="">
-                                    <span class="fas fa-print" aria-hidden="true" onclick="printPage()"></span>
-                                </a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="https://www.linkedin.com/in/serban-alexandru-aa5020180/"
-                                    target="_blank">
-                                    <span class="fab fa-linkedin" aria-hidden="true"></span>
-                                </a>
-                            </li>
-                            {% if user.is_authenticated %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="#" >{{user}}</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
-                            </li>
-                            {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'register' %}">Register</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{% url 'login' %}">Login</a>
-                            </li>
-                            {% endif %}
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
+        {% include 'navbar.html' %}
 
         <div class="container" id="brand">
             <div class="jumbotron text-center pt-3">
