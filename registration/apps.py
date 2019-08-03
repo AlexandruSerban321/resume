@@ -1,5 +1,8 @@
 from django.apps import AppConfig
 
 
-class RegistrationConfig(AppConfig):
+class UsersConfig(AppConfig):
     name = 'registration'
+
+    def ready(self):
+        import registration.signals
