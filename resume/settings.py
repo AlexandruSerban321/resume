@@ -29,6 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -43,7 +44,6 @@ INSTALLED_APPS = [
     'curriculum',
     'registration',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,26 +115,29 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'Europe/Bucharest'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles', 'static_root')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media')
+MEDIA_URL = '/media/'
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
