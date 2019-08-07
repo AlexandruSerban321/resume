@@ -1,5 +1,5 @@
 from django.contrib import admin
-from curriculum.models import Experience, Education, Skill
+from .models import Education, Experience, Skill
 
 # Register your models here.
 admin.site.register(Experience)

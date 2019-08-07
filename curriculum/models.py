@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Experience(models.Model):
     company = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
@@ -8,7 +7,6 @@ class Experience(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(blank=True, null=True)
     details = models.CharField(max_length=200)
-
 
     def __str__(self):
         return self.company
