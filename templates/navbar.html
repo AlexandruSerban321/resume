@@ -1,6 +1,6 @@
 {% load staticfiles %}
 <div class="container">
-    <nav class="nav navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="nav navbar navbar-expand-xl navbar-dark fixed-top">
         <div class="container">
             <button class="navbar-toggler" aria-expanded="false" aria-controls="navbarCollapse"
                 aria-label="Toggle navigation" type="button" data-target="#navbarCollapse" data-toggle="collapse">
@@ -32,6 +32,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">
                             <span class="fas fa-paper-plane mr-2" aria-hidden="true"></span>Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'post-create' %}">
+                            <span class="fas fa-comment mr-2" aria-hidden="true"></span>Add comment
                         </a>
                     </li>
                 </ul>

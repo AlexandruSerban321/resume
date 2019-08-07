@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block main %}
+{% load staticfiles %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 col-sm-6 col-12 mb-3 ml-4 align-self-center">
+            <div class="card" style="width:300px">
+                <div class="card-header">
+                    <center>
+                        <i><h4 style="font-size: 35px" class="card-title">{{post.author}}</h4></i>
+                    </center>
+                    <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image">
+                </div>
+                <div class="card-body">
+                    <h4><a href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h4>
+                    <p style="color: #292b2c" class="card-text">{{ post.content }}</p>
+                </div>
+                {% if user == post.author %}
+                <div class="card-footer">
+                    <a href="{% url 'post-update' post.id %}" class="btn btn-primary mt-2">Edit Post</a>
+                    <a href="{% url 'post-delete' post.id%}" style="background-color:red; border:red" class="btn btn-primary mt-2">Delete Post</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

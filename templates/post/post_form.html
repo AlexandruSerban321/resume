@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block main %}
+<div style="margin-top:10px" class="card">
+    <div class="card-body">
+        <h4 class="card-title">Create a new post</h4>
+    
+        <form method="post">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Post</legend>
+                {{ form|crispy }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit" >Upload Post</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
