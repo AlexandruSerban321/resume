@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # own app's
     'curriculum',
     'registration',
+    'post',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +63,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
                 os.path.join(BASE_DIR, 'templates/curriculum'),
-                os.path.join(BASE_DIR, 'templates/registration'),],
+                os.path.join(BASE_DIR, 'templates/registration'),
+                os.path.join(BASE_DIR, 'templates/post'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,6 +137,7 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
 
+AUTH_USER_EMAIL_UNIQUE = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
