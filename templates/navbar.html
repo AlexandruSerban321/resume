@@ -55,12 +55,6 @@
                         </a>
                     </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://www.linkedin.com/in/serban-alexandru-aa5020180/"
-                            target="_blank">
-                            <span class="fab fa-linkedin" aria-hidden="true"></span>
-                        </a>
-                    </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'profile' %}">{{user}}</a>
