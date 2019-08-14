@@ -64,7 +64,8 @@ TEMPLATES = [
         'DIRS': [os.path.join(BASE_DIR, 'templates'),
                 os.path.join(BASE_DIR, 'templates/curriculum'),
                 os.path.join(BASE_DIR, 'templates/registration'),
-                os.path.join(BASE_DIR, 'templates/post'),],
+                os.path.join(BASE_DIR, 'templates/post'),
+                ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
