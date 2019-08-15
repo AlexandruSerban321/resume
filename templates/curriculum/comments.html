@@ -1,13 +1,13 @@
 {% load staticfiles %}
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="contact"><span class="fas fa-comment mr-2"></span>Comments</h2>
+        <h2 class="bpv bpw" id="comments"><span class="fas fa-comment mr-2"></span>Comments</h2>
     </div>
 
     {% if posts %}
     <div class="container">
         <div class="row">
-            {% for post in posts %}
+            {% for post in post_list %}
             <div class="col-lg-2 col-sm-6 col-12 mb-3 ml-4 align-self-center">
                 <div class="card" style="width:200px">
                     <div class="caAuthor imagerd-header">
@@ -23,7 +23,8 @@
                     {% if user == post.author %}
                     <div class="card-footer">
                         <a href="{% url 'post-update' post.id %}" class="btn btn-primary mt-2">Edit Post</a>
-                        <a href="{% url 'post-delete' post.id%}" style="background-color:red; border:red" class="btn btn-primary mt-2">Delete Post</a>
+                        <a href="{% url 'post-delete' post.id%}" style="background-color:red; border:red"
+                            class="btn btn-primary mt-2">Delete Post</a>
                     </div>
                     {% endif %}
                 </div>
@@ -32,7 +33,31 @@
         </div>
     </div>
     <br>
-
+    {% if is_paginated %}
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            {% if post_list.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page=1#comments">First</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ post_list.previous_page_number }}#comments">Previous</a>
+                </li>
+            {% endif %}
+            <li class="page-item">
+                <p class="page-link">Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.</p>
+            </li>
+            {% if post_list.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ post_list.next_page_number }}#comments">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ post_list.paginator.num_pages }}#comments">Last</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
     {% else %}
     <center>
         <h1>No comments yet</h1>
