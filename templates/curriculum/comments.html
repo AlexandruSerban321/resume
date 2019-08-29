@@ -41,7 +41,7 @@
                     <a class="page-link" href="?page=1#comments">First</a>
                 </li>
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ post_list.previous_page_number }}#comments">Previous</a>
+                    <a class="page-link" href="?page={{ post_list.previous_page_number }}#comments">{{post_list.previous_page_number}}</a>
                 </li>
             {% endif %}
             <li class="page-item">
@@ -49,7 +49,7 @@
             </li>
             {% if post_list.has_next %}
                 <li class="page-item">
-                    <a class="page-link" href="?page={{ post_list.next_page_number }}#comments">Next</a>
+                    <a class="page-link" href="?page={{ post_list.next_page_number }}#comments">{{post_list.next_page_number}}</a>
                 </li>
                 <li class="page-item">
                     <a class="page-link" href="?page={{ post_list.paginator.num_pages }}#comments">Last</a>
