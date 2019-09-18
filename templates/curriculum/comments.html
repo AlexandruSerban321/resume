@@ -12,7 +12,7 @@
                 <div class="card" style="width:200px">
                     <div class="caAuthor imagerd-header">
                         <center>
-                            <h4 class="card-title">{{post.author}}</h4>
+                            <h4 class="card-title">{{post.author|capfirst}}</h4>
                         </center>
                         <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image">
                     </div>

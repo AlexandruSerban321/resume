@@ -15,7 +15,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'homeurl' slug=#experience %}">
+                        <a class="nav-link" href="#experience">
                             <span class="fas fa-briefcase mr-2" aria-hidden="true"></span>Experience
                         </a>
                     </li>
@@ -57,7 +57,7 @@
 
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'profile' %}">{{user}}</a>
+                        <a class="nav-link" href="{% url 'profile' %}">{{user|capfirst}}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>

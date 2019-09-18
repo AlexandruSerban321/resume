@@ -20,7 +20,3 @@ def Home_view(request):
         'is_paginated': True,
     }
     return render(request, 'resume.html', context)
-
-
-def home(request, slug):
-    return render(request, 'resume.html', {'slug':slug})

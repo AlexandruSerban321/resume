@@ -1,7 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
 from django.urls import path
-from curriculum.views import Home_view, home
+from curriculum.views import Home_view
 from post.views import PostCreateView, PostUpdateView, PostDeleteView, PostDetailView
 from registration.views import register, profile
 from django.conf import settings
@@ -22,7 +22,6 @@ urlpatterns = [
     path('password-reset-complete/',auth_views.PasswordResetCompleteView.as_view(template_name='password_reset_complete.html'),name='password_reset_complete'),
     path('admin/', admin.site.urls),
     path('', Home_view, name='home'),
-    path('<slug:slug>', home, name='homeurl'),
 ]
 
 if settings.DEBUG:
