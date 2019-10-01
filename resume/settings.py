@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'accounts',
+        'NAME': 'resume',
         'USER': 'admin',
         'PASSWORD': 'admin',
         'HOST': 'localhost'
