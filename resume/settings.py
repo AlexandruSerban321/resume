@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'resume',
         'USER': 'admin',
         'PASSWORD': os.environ.get('DATA_BASE_PASSWORD'),
-        'HOST': 'localhost'
+        'HOST': 'community.pythonanywhere.com'
     }
 }
 
