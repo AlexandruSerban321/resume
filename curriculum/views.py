@@ -8,7 +8,7 @@ def Home_view(request):
     all_experiences = Experience.objects.order_by("-id")
     all_educations = Education.objects.order_by("-id")
     all_skills = Skill.objects.all()
-    paginator = Paginator(posts, 5)
+    paginator = Paginator(posts, 4)
     page = request.GET.get('page')
     post_list = paginator.get_page(page)
     context = {
