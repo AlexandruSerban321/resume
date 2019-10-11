@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['community.pythonanywhere.com']
+ALLOWED_HOSTS = [pythonanywhere.com]
 
 
 # Application definition
@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'resume.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'resume',
-        'USER': 'admin',
+        'NAME': 'alexandruserban0$resume',
+        'USER': 'alexandruserban0',
         'PASSWORD': os.environ.get('DATA_BASE_PASSWORD'),
-        'HOST': 'community.pythonanywhere.com'
+        'HOST': 'alexandruserban09080.mysql.pythonanywhere-services.com',
     }
 }
 
