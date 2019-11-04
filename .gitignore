@@ -9,7 +9,6 @@ resume/local_settings.py
 __pycache__/
 local_settings.py
 db.sqlite3
-media
 .idea/
 .env
 
