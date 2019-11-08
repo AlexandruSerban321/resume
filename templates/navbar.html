@@ -6,7 +6,6 @@
                 aria-label="Toggle navigation" type="button" data-target="#navbarCollapse" data-toggle="collapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav pull-sm-left">
                     <li class="nav-item">
@@ -30,18 +29,22 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}#strength">
+                            <span class="fas fa-bolt mr-2" aria-hidden="true"></span>Strength
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#contact">
                             <span class="fas fa-paper-plane mr-2" aria-hidden="true"></span>Contact
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'post-create' %}">
-                            <span class="fas fa-comment mr-2" aria-hidden="true"></span>Add comment
+                        <a class="nav-link" href="{% url 'home' %}#comments">
+                            <span class="fas fa-comment mr-2" aria-hidden="true"></span>Comments
                         </a>
                     </li>
                 </ul>
             </div>
-
             <div>
                 <ul class="nav pull-sm-right">
                     <li class="nav-item">
@@ -54,7 +57,6 @@
                             <span class="fas fa-print" aria-hidden="true" onclick="window.print()"></span>
                         </a>
                     </li>
-
                     {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'profile' %}">{{user|capfirst}}</a>
