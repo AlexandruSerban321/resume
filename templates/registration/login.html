@@ -1,22 +1,18 @@
 {% extends  'base.html' %}
 {% load crispy_forms_tags %}
-
 {% block main %}
 <div style="margin-top:10px" class="card">
     <div class="card-body">
         {% if messages %}
-            {% for message in messages %}
-                <p style="color: greenyellow">{{message}}</p>
-            {% endfor %}
+        {% for message in messages %}
+        <p style="color: #33cc33">{{message}}</p>
+        {% endfor %}
         {% endif %}
         <h4 class="card-title">Log in to your account</h4>
-
         <form method="post">
             {% csrf_token %}
             <input type="hidden" name="next" value="{{ next }}">
-
             {{ form|crispy }}
-
             <button style="margin-top: 10px" type="submit" class="btn btn-primary btn-block">Log in</button>
         </form>
         <div class="border-top pt-3">

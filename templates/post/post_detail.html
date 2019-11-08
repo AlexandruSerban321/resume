@@ -7,7 +7,9 @@
             <div class="card" style="width:300px">
                 <div class="card-header">
                     <center>
-                        <i><h4 style="font-size: 35px" class="card-title">{{post.author}}</h4></i>
+                        <i>
+                            <h4 style="font-size: 35px" class="card-title">{{post.author}}</h4>
+                        </i>
                     </center>
                     <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image">
                 </div>
@@ -18,7 +20,8 @@
                 {% if user == post.author %}
                 <div class="card-footer">
                     <a href="{% url 'post-update' post.id %}" class="btn btn-primary mt-2">Edit Post</a>
-                    <a href="{% url 'post-delete' post.id%}" style="background-color:red; border:red" class="btn btn-primary mt-2">Delete Post</a>
+                    <a href="{% url 'post-delete' post.id%}" style="background-color:red; border:red"
+                        class="btn btn-primary mt-2">Delete Post</a>
                 </div>
                 {% endif %}
             </div>
