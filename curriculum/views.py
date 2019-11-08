@@ -4,7 +4,7 @@ from post.models import Post
 from django.core.paginator import Paginator
 
 def Home_view(request):
-    all_strenght = Post.objects.order_by("-id")
+    all_strenght = Strenght.objects.order_by("-id")
     posts = Post.objects.order_by("-date_posted")
     all_experiences = Experience.objects.order_by("-id")
     all_educations = Education.objects.order_by("-id")

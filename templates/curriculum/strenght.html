@@ -1,27 +1,28 @@
 {% load staticfiles %}
+<br id="strength">
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="strength"><span class="fas fa-bolt mr-2"></span>Strengths</h2>
+        <h2 class="bpv bpw"><span class="fas fa-bolt mr-2"></span>Strengths</h2>
     </div>
-
     <div class="col-lg-3 col-sm-6 col-12 mb-3 align-self-center">
         <div class="container">
-
             <div class="container">
                 <div class="container">
                     <ul>
+                        {% if all_strenght %}
+                        {% for strenght in all_strenght %}
                         <li>
-                            <p>Health Conscious alcohol/drug free</p>
+                            <p>{{strenght.strenght}}</p>
                         </li>
+                        {% endfor %}
+                        {% else %}
                         <li>
-                            <p>Flexible, quick to pick up new skills and eager to learn continuosly</p>
+                            <p>You are week just like Meepo</p>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
