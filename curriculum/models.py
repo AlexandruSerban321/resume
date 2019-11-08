@@ -31,7 +31,7 @@ class Skill(models.Model):
     def __str__(self):
         return self.name
 
-class Strenghts(models.Model):
+class Strenght(models.Model):
     strenght =  models.CharField(max_length=100)
 
     def __str__(self):
