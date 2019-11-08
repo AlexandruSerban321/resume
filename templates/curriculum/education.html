@@ -1,13 +1,12 @@
 {% load staticfiles %}
+<br id="education">
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="education"><span class="fas fa-graduation-cap mr-2"></span>Education</h2>
+        <h2 class="bpv bpw"><span class="fas fa-graduation-cap mr-2"></span>Education</h2>
     </div>
     <div class="container">
-
         {% if all_educations %}
         {% for education in all_educations %}
-
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -41,24 +40,18 @@
                     <div class="ember-view pv-entity__extra-details" id="ember1167">
                         <p>&nbsp;</p>
                     </div>
-
                     <ul>
-
                         <li>
                             <p>
                                 {{ education.details | safe }}
                             </p>
                         </li>
-
                     </ul>
                 </div>
-
                 <p>&nbsp;</p>
             </div>
         </div>
-
         <br>
-
     </div>
 </div>
 {% endfor %}

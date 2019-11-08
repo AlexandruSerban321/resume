@@ -1,15 +1,12 @@
 {% load staticfiles %}
+<br id="skills">
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="skills"><span class="fas fa-wrench mr-2"></span>Skills</h2>
+        <h2 class="bpv bpw"><span class="fas fa-wrench mr-2"></span>Skills</h2>
     </div>
-
     {% if all_skills %}
-
     <div class="container">
-
         <div class="container text-left">
-
             <div class="container">
                 <div class="row">
                     {% for skill in all_skills %}
@@ -21,16 +18,12 @@
                         </div>
                     </div>
                     {% endfor %}
-
                 </div>
             </div>
             <br>
         </div>
-
     </div>
-
     {% else %}
     <h2>You have no skills, so you need to level up!</h2>
     {% endif %}
-
 </div>

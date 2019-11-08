@@ -1,13 +1,12 @@
 {% load staticfiles %}
+<br id="experience">
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="experience"><span class="fas fa-briefcase mr-2"></span>Experience</h2>
+        <h2 class="bpv bpw"><span class="fas fa-briefcase mr-2"></span>Experience</h2>
     </div>
     <div class="container">
-
         {% if all_experiences %}
         {% for experience in all_experiences %}
-
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -41,24 +40,18 @@
                     <div class="ember-view pv-entity__extra-details" id="ember1167">
                         <p>&nbsp;</p>
                     </div>
-
                     <ul>
-
                         <li>
                             <p>
                                 {{ experience.details | safe }}
                             </p>
                         </li>
-
                     </ul>
                 </div>
-
                 <p>&nbsp;</p>
             </div>
         </div>
-
         <br>
-
     </div>
 </div>
 {% endfor %}
