@@ -1,9 +1,9 @@
 {% load staticfiles %}
+<br id="comments">
 <div class="container">
     <div class="bpu afn afd">
-        <h2 class="bpv bpw" id="comments"><span class="fas fa-comment mr-2"></span>Comments</h2>
+        <h2 class="bpv bpw"><span class="fas fa-comment mr-2"></span>Comments</h2>
     </div>
-
     {% if posts %}
     <div class="container">
         <div class="row">
@@ -37,23 +37,25 @@
     <nav aria-label="Page navigation example">
         <ul class="pagination justify-content-center">
             {% if post_list.has_previous %}
-                <li class="page-item">
-                    <a class="page-link" href="?page=1#comments">First</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ post_list.previous_page_number }}#comments">{{post_list.previous_page_number}}</a>
-                </li>
+            <li class="page-item">
+                <a class="page-link" href="?page=1#comments">First</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link"
+                    href="?page={{ post_list.previous_page_number }}#comments">{{post_list.previous_page_number}}</a>
+            </li>
             {% endif %}
             <li class="page-item">
                 <p class="page-link">Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.</p>
             </li>
             {% if post_list.has_next %}
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ post_list.next_page_number }}#comments">{{post_list.next_page_number}}</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="?page={{ post_list.paginator.num_pages }}#comments">Last</a>
-                </li>
+            <li class="page-item">
+                <a class="page-link"
+                    href="?page={{ post_list.next_page_number }}#comments">{{post_list.next_page_number}}</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="?page={{ post_list.paginator.num_pages }}#comments">Last</a>
+            </li>
             {% endif %}
         </ul>
     </nav>
@@ -63,5 +65,4 @@
         <h1>No comments yet</h1>
     </center>
     {% endif %}
-
 </div>
