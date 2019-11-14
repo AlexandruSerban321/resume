@@ -14,7 +14,7 @@
                         <center>
                             <h4 class="card-title">{{post.author|capfirst}}</h4>
                         </center>
-                        <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image">
+                        <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image" height="200px">
                     </div>
                     <div class="card-body">
                         <h4><a href="{% url 'post-detail' post.id %}">{{post.title }}</a></h4>
