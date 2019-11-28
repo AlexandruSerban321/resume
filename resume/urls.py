@@ -7,11 +7,12 @@ from registration.views import register, profile, activate
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls import url
-from .sitemaps import StaticViewsSitemap
+from .sitemaps import StaticViewsSitemap, PostsSitemap
 from django.contrib.sitemaps.views import sitemap
 
 sitemaps = {
-    'static': StaticViewsSitemap
+    'static': StaticViewsSitemap,
+    'post': PostsSitemap
 }
 
 urlpatterns = [
