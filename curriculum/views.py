@@ -22,3 +22,6 @@ def Home_view(request):
         'is_paginated': True,
     }
     return render(request, 'resume.html', context)
+
+def Robots_view(request):
+    return render(request, 'robots.txt', {})
