@@ -7,6 +7,10 @@ body {
     padding-top: 80px;
 }
 
+.mr-2{
+    color: #007bff;
+}
+
 h4, label, legend{
     color:#292b2c;
 }
