@@ -15,32 +15,32 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#education">
-                            <span class="fas fa-graduation-cap mr-2" aria-hidden="true"></span>Education
+                            <span class="icon-graduation-cap mr-2" aria-hidden="true"></span>Education
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#experience">
-                            <span class="fas fa-briefcase mr-2" aria-hidden="true"></span>Experience
+                            <span class="icon-briefcase mr-2" aria-hidden="true"></span>Experience
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#skills">
-                            <span class="fas fa-wrench mr-2" aria-hidden="true"></span>Skills
+                            <span class="icon-wrench mr-2" aria-hidden="true"></span>Skills
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#strength">
-                            <span class="fas fa-bolt mr-2" aria-hidden="true"></span>Strength
+                            <span class="icon-bolt mr-2" aria-hidden="true"></span>Strength
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'home' %}#contact">
-                            <span class="fas fa-paper-plane mr-2" aria-hidden="true"></span>Contact
+                            <span class="icon-paper-plane mr-2" aria-hidden="true"></span>Contact
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'post-create' %}">
-                            <span class="fas fa-comment mr-2" aria-hidden="true"></span>Add comment
+                            <span class="icon-comment mr-2" aria-hidden="true"></span>Add comment
                         </a>
                     </li>
                 </ul>
@@ -48,8 +48,8 @@
             <div>
                 <ul class="nav pull-sm-right">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span class="fas fa-print" aria-hidden="true" onclick="window.print()"></span>
+                        <a class="nav-link" href="">
+                            <span class="icon-print" aria-hidden="true" onclick="window.print()"></span>
                         </a>
                     </li>
                     {% if user.is_authenticated %}
