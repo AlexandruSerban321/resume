@@ -2,7 +2,6 @@
 # Edit at https://www.gitignore.io/?templates=linux,python,django,windows,pycharm,visualstudio,visualstudiocode
 
 ### Django ###
-resume/local_settings.py
 *.log
 *.pot
 *.pyc
