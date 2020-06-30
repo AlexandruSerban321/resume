@@ -8,7 +8,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.contrib.auth.models import User
-from django.core.mail import EmailMessage
+from django.core.mail import EmailMessage, send_mail
 from django.contrib.auth import login, authenticate
 from django.http import HttpResponse
 
@@ -28,11 +28,9 @@ def register(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            to_email = form.cleaned_data.get('email')
-            email = EmailMessage(
-                mail_subject, message, to=[to_email]
-            )
-            email.send()
+            from_email = 'serban200208@gmail.com'
+            to_list = [form.cleaned_data.get('email')]
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
             messages.success(
                 request, f"Please confirm you'r email befor logging in")
             return redirect('login')
