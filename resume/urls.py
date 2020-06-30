@@ -36,7 +36,7 @@ urlpatterns = [
         template_name='password_reset_confirm.html'), name='password_reset_confirm'),
     path('password-reset-complete/', auth_views.PasswordResetCompleteView.as_view(
         template_name='password_reset_complete.html'), name='password_reset_complete'),
-    path('santa/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path('', Home_view, name='home'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
