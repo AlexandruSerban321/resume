@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from curriculum.models import Experience, Education, Skill, Strenght
+from curriculum.models import Experience, Education, Skill, Strenght, Category
 from post.models import Post
 from django.core.paginator import Paginator
 
@@ -9,10 +9,12 @@ def Home_view(request):
     all_experiences = Experience.objects.order_by("-id")
     all_educations = Education.objects.order_by("-id")
     all_skills = Skill.objects.all()
+    all_categories = Category.objects.all()
     paginator = Paginator(posts, 4)
     page = request.GET.get('page')
     post_list = paginator.get_page(page)
     context = {
+        'all_categories': all_categories,
         'all_strenght':  all_strenght,
         'posts': posts,
         'all_experiences': all_experiences,

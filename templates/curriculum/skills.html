@@ -6,12 +6,15 @@
     </div>
     {% if all_skills %}
     <div class="container">
+        {% for category in all_categories %}
         <div class="container text-left">
+
+            <h3 class="">{{ category.name }}</h3>
             <div class="container">
                 <div class="row">
-                    {% for skill in all_skills %}
+                    {% for skill in category.skill_set.all %}
                     <div class="col-sm-3 mb-3">
-                        <label style="color: #FFF" for="html">{{ skill.name }}</label>
+                        <label style="color: white;" for="html">{{ skill.name }}</label>
                         <div class="progress">
                             <div class="progress-bar" id="html" role="progressbar" style="width:{{ skill.level }}%">
                             </div>
@@ -22,6 +25,7 @@
             </div>
             <br>
         </div>
+        {% endfor %}
     </div>
     {% else %}
     <div class="container">

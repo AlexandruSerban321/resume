@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Experience(models.Model):
     company = models.CharField(max_length=50)
     position = models.CharField(max_length=50)
@@ -27,12 +28,25 @@ class Education(models.Model):
 class Skill(models.Model):
     name = models.CharField(max_length=100)
     level = models.IntegerField()
+    category = models.ForeignKey(
+        'Category', on_delete=models.SET_NULL, blank=True, null=True)
 
     def __str__(self):
         return self.name
 
+
+class Category(models.Model):
+    class Meta:
+        verbose_name_plural = 'categories'
+
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
 class Strenght(models.Model):
-    strenght =  models.CharField(max_length=100)
+    strenght = models.CharField(max_length=100)
 
     def __str__(self):
         return self.strenght
