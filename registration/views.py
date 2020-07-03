@@ -30,7 +30,7 @@ def register(request):
             })
             from_email = 'serban200208@gmail.com'
             to_list = [form.cleaned_data.get('email')]
-            send_mail(mail_subject, message, from_email, to_list, fail_silently=True)
+            send_mail(mail_subject, message, from_email, to_list, fail_silently=False)
             messages.success(
                 request, f"Please confirm you'r email befor logging in")
             return redirect('login')
