@@ -1,7 +1,9 @@
-Django==2.2.2
-django-crispy-forms==1.7.2
-mysqlclient==1.4.2.post1
-Pillow==6.1.0
-python-dotenv==0.10.3
-pytz==2019.1
-sqlparse==0.3.0
+asgiref==3.2.10
+Django==3.0.8
+django-crispy-forms==1.9.2
+mysqlclient==2.0.1
+Pillow==7.2.0
+python-dotenv==0.14.0
+pytz==2020.1
+six==1.15.0
+sqlparse==0.3.1
