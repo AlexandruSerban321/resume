@@ -17,22 +17,22 @@ def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
         if form.is_valid():
-            user = form.save(commit=False)
-            user.is_active = False
+            user = form.save(commit=True)
+            user.is_active = True
             user.save()
-            current_site = get_current_site(request)
-            mail_subject = 'Activate your account.'
-            message = render_to_string('acc_active_email.html', {
-                'user': user,
-                'domain': current_site.domain,
-                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
-                'token': account_activation_token.make_token(user),
-            })
-            from_email = 'serban200208@gmail.com'
-            to_list = [form.cleaned_data.get('email')]
-            send_mail(mail_subject, message, from_email, to_list, fail_silently=False)
-            messages.success(
-                request, f"Please confirm you'r email befor logging in")
+            # current_site = get_current_site(request)
+            # mail_subject = 'Activate your account.'
+            # message = render_to_string('acc_active_email.html', {
+            #     'user': user,
+            #     'domain': current_site.domain,
+            #     'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+            #     'token': account_activation_token.make_token(user),
+            # })
+            # from_email = 'serban200208@gmail.com'
+            # to_list = [form.cleaned_data.get('email')]
+            # send_mail(mail_subject, message, from_email, to_list, fail_silently=False)
+            # messages.success(
+            #     request, f"Please confirm you'r email befor logging in")
             return redirect('login')
     else:
         form = UserRegisterForm()
