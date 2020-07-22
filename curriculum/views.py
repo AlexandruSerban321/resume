@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from curriculum.models import Experience, Education, Skill, Strenght, Category
 from post.models import Post
 from django.core.paginator import Paginator
@@ -27,3 +27,6 @@ def Home_view(request):
 
 def Robots_view(request):
     return render(request, 'robots.txt', {})
+
+def error_404_view(requiest, exception):
+    return redirect('home')
