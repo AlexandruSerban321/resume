@@ -1,7 +1,7 @@
 from django.contrib.auth import views as auth_views
 from django.contrib import admin
 from django.urls import path
-from curriculum.views import Home_view, Robots_view
+from curriculum.views import Home_view, Robots_view, error_404_view
 from post.views import PostCreateView, PostUpdateView, PostDeleteView, PostDetailView
 from registration.views import register, profile, activate
 from django.conf import settings
@@ -16,8 +16,8 @@ sitemaps = {
 }
 
 urlpatterns = [
-    path('robots.txt', Robots_view ,name='robots.txt'),
-    path('sitemap.xml', sitemap, {'sitemaps':sitemaps}),
+    path('robots.txt', Robots_view, name='robots.txt'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
     path('post/<int:pk>/details/', PostDetailView.as_view(), name='post-detail'),
     path('post/<int:pk>/delete/', PostDeleteView.as_view(), name='post-delete'),
     path('post/new/', PostCreateView.as_view(), name='post-create'),
@@ -39,4 +39,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Home_view, name='home'),
 ]
+handler404 = error_404_view
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
