@@ -54,7 +54,11 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        {% if user|length_is:"8" %}
                         <a class="nav-link" href="{% url 'profile' %}">{{user|capfirst}}</a>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'profile' %}">{{user|capfirst|truncatechars:9}}</a>
+                        {% endif %}
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
