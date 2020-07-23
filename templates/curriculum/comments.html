@@ -18,7 +18,7 @@
                     </div>
                     <div class="card-body">
                         <h4><a href="{% url 'post-detail' post.id %}">{{post.title|truncatechars:31 }}</a></h4>
-                        <p style="color: #292b2c" class="card-text">{{ post.content|truncatechars:36 }}</p>
+                        <p style="color: #292b2c" class="card-text">{{ post.content|truncatechars:56 }}</p>
                     </div>
                     {% if user == post.author %}
                     <div class="card-footer">
