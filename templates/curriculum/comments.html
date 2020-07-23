@@ -17,7 +17,7 @@
                         <img class="card-img-top" src="{{ post.author.profile.image.url }}" alt="Author image">
                     </div>
                     <div class="card-body">
-                        <h4><a href="{% url 'post-detail' post.id %}">{{post.title|truncatechars:21 }}</a></h4>
+                        <h4><a href="{% url 'post-detail' post.id %}">{{post.title|truncatechars:31 }}</a></h4>
                         <p style="color: #292b2c" class="card-text">{{ post.content|truncatechars:36 }}</p>
                     </div>
                     {% if user == post.author %}
