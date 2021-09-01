@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /santa/
+Disallow: /admin/
