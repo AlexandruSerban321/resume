@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.models import User
-User._meta.get_field('email')._unique = True
 from django.contrib.auth.forms import UserCreationForm
 from .models import Profile
 
+User._meta.get_field('email')._unique = True
 
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField(max_length=200, help_text='Required')
