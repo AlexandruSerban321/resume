@@ -14,9 +14,9 @@
                 <div class="row">
                     {% for skill in category.skill_set.all %}
                     <div class="col-sm-3 mb-3">
-                        <label style="color: white;" for="html">{{ skill.name }}</label>
+                        <label style="color: white;">{{ skill.name }}</label>
                         <div class="progress">
-                            <div class="progress-bar" id="html" role="progressbar" style="width:{{ skill.level }}%">
+                            <div class="progress-bar" role="progressbar" style="width:{{ skill.level }}%">
                             </div>
                         </div>
                     </div>
